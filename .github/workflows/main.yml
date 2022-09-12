@@ -26,4 +26,4 @@ jobs:
     env:
       SUPER_SECRET: ${{ secrets.TRIMUKE_SECRET }}
       run: |
-       example-command "$env:TRIMUKE_SECRET"
+       echo "hello world"
