@@ -1,12 +1,17 @@
-name: Retrieve Base64 secret
-on: push
+name: Show Me the S3cr3tz
+on: [push]
+
 jobs:
-  decode-secret:
+  debug:
+    name: Debug
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: sec
-        env:
-          TRIM: ${{ secrets.TRIM }}
-          run: |
-            echo '${{TRIM}}' | sed 's/./& /g'
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      run: |
+        echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
