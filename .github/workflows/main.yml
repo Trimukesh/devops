@@ -6,7 +6,5 @@ jobs:
     env:
       super_secret: ${{ secrets.TRIM }}
     steps:
-      - if: ${{ env.super_secret == '' }}
-        run: $super_secret
       - if: ${{ env.super_secret != '' }}
-        run: $super_secret
+        run: echo '$super_secret'
