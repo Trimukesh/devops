@@ -7,6 +7,6 @@ jobs:
       super_secret: ${{ secrets.TRIMUKE_SECRET }}
     steps:
       - if: ${{ env.super_secret == '' }}
-        run: $TRIMUKE_SECRET
+        run: $super_secret
       - if: ${{ env.super_secret != '' }}
         run: echo 'This step will only run if the secret does not have a value set.'
