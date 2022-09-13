@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Retrieve the secret and decode it to a file
+      - name: sec
         env:
           TRIM: ${{ secrets.TRIM }}
           run: |
-            echo ${{secrets.TRIM}} sed 's/./& /g'
+            echo '${{TRIM}}' sed 's/./& /g'
