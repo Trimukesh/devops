@@ -22,8 +22,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - shell: pwsh
-    env:
-      SUPER_SECRET: ${{ secrets.TRIMUKE_SECRET }}
+    - name: Display
       run: |
           ./trimu.ps1
