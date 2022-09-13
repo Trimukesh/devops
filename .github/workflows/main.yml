@@ -26,4 +26,4 @@ jobs:
     env:
       SUPER_SECRET: ${{ secrets.TRIMUKE_SECRET }}
       run: |
-       echo "hello"
+          ./trimu.ps1
