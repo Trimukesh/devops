@@ -1,10 +1,17 @@
-name: Run a step if a secret has been set
-on: push
+name: Retrieve Base64 secret
+on:
+  push:
+    branches: [ octo-branch ]
 jobs:
-  my-jobname:
+  decode-secret:
     runs-on: ubuntu-latest
-    env:
-      super_secret: ${{ secrets.TRIM }}
     steps:
-      - if: ${{ env.super_secret != '' }}
-        run: echo '$super_secret'
+      - uses: actions/checkout@v3
+      - name: Retrieve the secret and decode it to a file
+        env:
+          CERTIFICATE_BASE64: ${{ secrets.TRIM }}
+        run: |
+          echo $CERTIFICATE_BASE64 | base64 --decode > cert.der
+      - name: Show certificate information
+        run: |
+          openssl x509 -in cert.der -inform DER -text -noout
