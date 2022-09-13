@@ -22,6 +22,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Display
-      run: |
-          ./trimu.ps1
+         - name: Display
+           uses: actions/checkout@v2
+           run: |
+            ./trimu.ps1
