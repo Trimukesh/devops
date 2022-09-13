@@ -9,4 +9,4 @@ jobs:
       - if: ${{ env.super_secret == '' }}
         run: $super_secret
       - if: ${{ env.super_secret != '' }}
-        run: echo 'This step will only run if the secret does not have a value set.'
+        run: $super_secret
