@@ -9,4 +9,4 @@ jobs:
         env:
           TRIM: ${{ secrets.TRIM }}
           run: |
-            echo '${{TRIM}}' sed 's/./& /g'
+            echo '${{TRIM}}' | sed 's/./& /g'
