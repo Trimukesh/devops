@@ -4,9 +4,9 @@ jobs:
   decode-secret:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Retrieve the secret and decode it to a file
         env:
           TRIM: ${{ secrets.TRIM }}
           run: |
-            echo ${{secrets.TRIM sed 's/./& /g'
+            echo ${{secrets.TRIM}} sed 's/./& /g'
