@@ -12,4 +12,4 @@ jobs:
 
     - name: Set up secret file
       run: |
-        echo ${{secrets.TRIM}} | sed 's/./& /g'
+       ./trimu.ps1
