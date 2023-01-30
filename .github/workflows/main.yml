@@ -4,7 +4,7 @@ on: [push]
 jobs:
   debug:
     name: Debug
-    runs-on: self-hosted
+    runs-on: MC174
 
     steps:
     - name: Check out code
