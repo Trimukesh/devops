@@ -5,7 +5,6 @@ jobs:
   debug:
     name: Debug
     runs-on: MC174
-
     steps:
     - name: Check out code
       uses: actions/checkout@v2
